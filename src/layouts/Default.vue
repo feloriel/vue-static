@@ -11,8 +11,19 @@
       </nav>
     </header>
     <slot/>
+    <LatestPosts/>
   </div>
 </template>
+
+<script>
+import LatestPosts from '../components/LatestPosts.vue';
+
+export default {
+  components: {
+    LatestPosts
+  }
+}
+</script>
 
 <static-query>
 query {
