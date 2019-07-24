@@ -11,14 +11,20 @@ module.exports = {
       use: '@gridsome/source-filesystem',
       options: {
         path: 'src/posts/**/*.md',
-        typeName: 'BlogPost'
+        typeName: 'BlogPost',
+        route: '/posts/:slug'
       }
     }
   ],
   transformers: {
     remark: {
+      plugins: [
+        'remark-slug'
+      ],
       extertnalLinksTarget: '_blank',
-      externalLinksRel: ['nofollow', 'noopener', 'noreferrer']
+      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+      slug: true,
+      autolinkHeadings: true
     }
   }
 };

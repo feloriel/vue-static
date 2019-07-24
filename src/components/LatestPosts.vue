@@ -5,7 +5,7 @@
       <div v-html="edge.node.content" />
       <h4>{{ edge.node.title }}</h4>
       <p>{{ edge.node.date }}</p>
-      <g-link :to="`/posts/${edge.node.title}`">Read More</g-link>
+      <g-link :to="edge.node.path">Read More</g-link>
     </article>
   </section>
 </template>
@@ -19,6 +19,7 @@
           title
           tags
           date (format: "MMM Do YYYY")
+          path
         }
       }
     }
