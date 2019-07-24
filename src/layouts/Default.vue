@@ -10,7 +10,8 @@
         <g-link class="nav__link" to="/posts">Posts</g-link>
       </nav>
     </header>
-    <g-image src="~/assets/images/lucie.jpg" width="200" quality="100" />
+    <g-image v-if="background" :src="background" />
+    <!-- <g-image src="~/assets/images/lucie.jpg" width="200" quality="100" /> -->
     <slot/>
     <LatestPosts/>
   </div>
@@ -20,6 +21,7 @@
 import LatestPosts from '~/components/LatestPosts.vue';
 
 export default {
+  props: ['background'],
   components: {
     LatestPosts
   }

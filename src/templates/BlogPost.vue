@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout :background="$page.blogPost.image">
     <h1>{{ $page.blogPost.title }}</h1>
     <p>{{ $page.blogPost.date }}</p>
     <div v-html="$page.blogPost.content"/>
@@ -13,6 +13,7 @@ query Post ($path: String!) {
     content
     date (format: "MMM Do YYYY")
     tags
+    image (height: 400)
   }
 }
 </page-query>
