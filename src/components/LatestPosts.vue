@@ -3,9 +3,9 @@
     <h3>Latest Posts</h3>
     <article v-for="edge in $static.allBlogPost.edges" :key="edge.node.id">
       <div v-html="edge.node.content" />
-      <!-- <h4>Post Title</h4>
-      <p>Here is some fake text for a post body summary.</p> -->
-      <a href="#">Read More</a>
+      <h4>{{ edge.node.title }}</h4>
+      <p>{{ edge.node.date }}</p>
+      <g-link :to="`/posts/${edge.node.title}`">Read More</g-link>
     </article>
   </section>
 </template>
@@ -16,7 +16,9 @@
       edges {
         node {
           id
-          content
+          title
+          tags
+          date (format: "MMM Do YYYY")
         }
       }
     }
