@@ -10,13 +10,14 @@
         <g-link class="nav__link" to="/posts">Posts</g-link>
       </nav>
     </header>
+    <g-image src="~/assets/images/lucie.jpg" width="200" quality="100" />
     <slot/>
     <LatestPosts/>
   </div>
 </template>
 
 <script>
-import LatestPosts from '../components/LatestPosts.vue';
+import LatestPosts from '~/components/LatestPosts.vue';
 
 export default {
   components: {
