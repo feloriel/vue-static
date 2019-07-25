@@ -12,7 +12,7 @@
 
 <static-query>
   query LatestPosts {
-    allBlogPost {
+    allBlogPost (perPage: 2) {
       edges {
         node {
           id
