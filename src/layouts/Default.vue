@@ -13,7 +13,11 @@
     <g-image v-if="background" :src="background" class="billboard" />
     <!-- <g-image src="~/assets/images/lucie.jpg" width="200" quality="100" /> -->
     <div class="layout">
-      <slot/>
+      <transition name="fade" appear>
+        <main>
+          <slot/>
+        </main>
+      </transition>
       <LatestPosts/>
     </div>
   </div>
@@ -71,5 +75,13 @@ body {
 
 .nav__link {
   margin-left: 20px;
+}
+
+.fade-enter-active {
+  transition: 1s ease opacity;
+}
+
+.fade-enter {
+  opacity: 0;
 }
 </style>
